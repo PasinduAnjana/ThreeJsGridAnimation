@@ -25,13 +25,7 @@ import Experience from "./experience";
 export default function Home() {
   return (
     <main className=" h-screen w-full">
-      <Canvas
-        gl={{
-          antialias: true,
-          alpha: false,
-        }}
-        camera={{ position: [0, 0, 10], fov: 70, far: 20 }}
-      >
+      <Canvas camera={{ position: [0, 0, 10], fov: 70, far: 20 }}>
         <fog attach="fog" color="#000000" near={1} far={10} intensity={0.1} />
         <color attach="background" args={["#060606"]} />
         <ambientLight />
