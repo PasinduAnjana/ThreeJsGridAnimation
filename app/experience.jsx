@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 import React, { useState, useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import {
