@@ -25,7 +25,16 @@ import Experience from "./experience";
 export default function Home() {
   return (
     <main className=" h-screen w-full">
-      <Canvas camera={{ position: [0, 0, 10], fov: 70, far: 20 }}>
+      <Canvas
+        camera={{ position: [0, 0, 10], fov: 70, far: 20 }}
+        gl={{
+          powerPreference: "high-performance",
+          alpha: false,
+          antialias: false,
+          stencil: false,
+          depth: false,
+        }}
+      >
         <fog attach="fog" color="#000000" near={1} far={10} intensity={0.1} />
         <color attach="background" args={["#060606"]} />
         <ambientLight />
@@ -35,7 +44,7 @@ export default function Home() {
           <Experience />
         </ScrollControls>
 
-        <EffectComposer>
+        <EffectComposer multisampling={0} disableNormalPass={true}>
           <Bloom
             mipmapBlur
             levels={1}
